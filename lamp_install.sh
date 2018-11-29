@@ -41,6 +41,8 @@ echo "Установка пройдена успешно!
 --------------------------------------------------
 Ссылка на сайт: http://$siteName
 Ссылка на phpmyadmin: http://$siteName/phpmyadmin
+Логин phpmyadmin: root
+Пароль phpmyadmin: $rootmysqlpass
 Директория: /var/www/$siteName/public_html/
 --------------------------------------------------"
 else
