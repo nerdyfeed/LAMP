@@ -1,5 +1,4 @@
 # /bin/sh
-function FirstStart() {
 	echo "
 	Добро пожаловать в автоматический установщик LAMP-сервера
 	Далее будет произведена установка сервера
@@ -17,9 +16,3 @@ a2enmod mpm_worker
 a2enmod proxy_fcgi
 service apache2 restart && echo "Выполнено"
 rm /var/www/html/index.html
-}
-
-function Setup() {
-}
-
-FirstStart
