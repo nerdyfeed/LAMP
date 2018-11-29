@@ -1,5 +1,5 @@
 # /bin/sh
-function FirstStart {
+function FirstStart() {
 	echo "
 	Добро пожаловать в автоматический установщик LAMP-сервера
 	Далее будет произведена установка сервера
@@ -19,10 +19,7 @@ service apache2 restart && echo "Выполнено"
 rm /var/www/html/index.html
 }
 
-function Setup {
-	if [ -f /apache2/]
+function Setup() {
 }
-echo Начинаю установку LAMP-сервера.
-sleep 1
-echo Подготовка системы к установке.
-sleep 1
+
+FirstStart
