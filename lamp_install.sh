@@ -19,7 +19,11 @@ dpkg --add-architecture i386
 export DEBIAN_FRONTEND=noninteractive;apt-get --allow-unauthenticated -y -q install $INSTALLPACK && echo "Выполнено"
 dlinapass=10
 rootmysqlpass=`base64 -w 10 /dev/urandom | head -n 1`
+adminmysqlpass=`base64 -w 10 /dev/urandom | head -n 1`
 mysqladmin -uroot password $rootmysqlpass
+echo "CREATE USER 'admin'@'localhost' IDENTIFIED BY '$adminmysqlpass';" | mysql -uroot -p$rootmysqlpass
+echo "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;" | mysql -uroot -p$rootmysqlpass
+echo "FLUSH PRIVILEGES;" | mysql -uroot -p$rootmysqlpass
 echo "Настройка Apache2"
 sleep 1
 a2enmod rewrite
