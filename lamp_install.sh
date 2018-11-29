@@ -27,6 +27,7 @@ a2ensite $siteName.conf
 service apache2 restart
 ln -s /usr/share/phpmyadmin /var/www/$siteName/public_html/phpmyadmin
 a2dissite 000-default.conf
+service apache2 restart && echo "Выполнено"
 echo "Установка пройдена успешно!
 --------------------------------------------------
 Ссылка на сайт: http://$siteName
