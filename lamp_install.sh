@@ -15,4 +15,3 @@ a2dismod npm_event
 a2enmod mpm_worker
 a2enmod proxy_fcgi
 service apache2 restart && echo "Выполнено"
-rm /var/www/html/index.html
